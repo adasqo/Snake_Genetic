@@ -1,6 +1,4 @@
 
-//var population = generatePopulation()
-
 function inputMatrixDot(A, B, b, c) 
 {
     var vector = new Array();
@@ -46,15 +44,6 @@ function generateBrain(inputSize, hiddenSize, outputSize)
         outputLayer[k] = vector;
     }
     return [hiddenLayer1, hiddenLayer2, outputLayer];
-
-    // for(k=0; k<outputSize; ++k)
-    // {
-    //     var vector = new Array();
-    //     for(l=0;l<hiddenSize + 1; l++)
-    //         vector[l] = 2*(Math.random()-0.5);
-    //     outputLayer[k] = vector;
-    // }
-    // return [hiddenLayer1, outputLayer];
 }
 
 function getMove(layers, windowSize, positionsOfSnake, positionOfFood, prevPosition)
@@ -86,86 +75,12 @@ function getMove(layers, windowSize, positionsOfSnake, positionOfFood, prevPosit
         }
     }
     return maxIndex;
-   //console.log(layers[0]);
-    // var input = createInput(windowSize, positionsOfSnake, positionOfFood);
-    // var hiddenLayer1 = layers[0];
-    // var outputLayer = layers[1];
-    // var hiddenResult1 = inputMatrixDot(input, hiddenLayer1, windowSize, hiddenLayer1.length);
-    // var hiddenResultDot1 = new Array();
-    // var k;
-    // for(k=0; k<hiddenResult1.length; k++)
-    //     hiddenResultDot1[k] = Math.tanh(hiddenResult1[k]);
-    // hiddenResultDot1[hiddenResultDot1.length] = 1;
-    // var outputResult = inputMatrixDot(hiddenResultDot1, outputLayer, hiddenSize + 1, 4);
-    // maxValue = -1000000;
-    // maxIndex = 0;
-    // for(k=0; k<outputResult.length; k++)
-    // {
-    //     if(outputResult[k] > maxValue)
-    //     {
-    //         maxValue = outputResult[k];
-    //         maxIndex = k;       
-    //     }
-    // }
-    // return maxIndex;
 }
 
 function createInput(windowSize, positionsOfSnake, positionOfFood)
 {
     var inputVector = new Array();
 
-    // if(positionsOfSnake[0][0] == positionOfFood[0][0] && positionsOfSnake[0][1] < positionOfFood[0][1])
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    // if(positionsOfSnake[0][0] == positionOfFood[0][0] && positionsOfSnake[0][1] > positionOfFood[0][1])
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    // if(positionsOfSnake[0][1] == positionOfFood[0][1] && positionsOfSnake[0][0] < positionOfFood[0][0])
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-    
-    // if(positionsOfSnake[0][1] == positionOfFood[0][1] && positionsOfSnake[0][0] < positionOfFood[0][0])
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    // if(positionsOfSnake[0][0] == 0)
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    // if(positionsOfSnake[0][1] == 0)
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    //     if(positionsOfSnake[0][0] == 19)
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-
-    //     if(positionsOfSnake[0][1] == 19)
-    //     inputVector.push(1);
-    // else
-    //     inputVector.push(0);
-    // inputVector.push(positionsOfSnake[0][0]);
-    // inputVector.push(20 - positionsOfSnake[0][0]);
-    // inputVector.push(positionsOfSnake[0][1]);
-    // inputVector.push(20 - positionsOfSnake[0][0]);
-    
-    // inputVector.push(positionsOfSnake[0][0]);
-    // inputVector.push(positionsOfSnake[0][1]);
-    // inputVector.push(prevPosition[0]);
-    // inputVector.push(prevPosition[1]);
-    // inputVector.push(positionOfFood[0][0]);
-    // inputVector.push(positionOfFood[0][1]);
-
-    // return inputVector;
     windowSize = Math.floor(Math.sqrt(windowSize));
     var positionOfHead = positionsOfSnake[0];
     var span = (windowSize-1)/2;
